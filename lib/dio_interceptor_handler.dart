@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 
 class DioInterceptorHandler {
+  static final Dio _dio = Dio();
   static Dio initDio() {
-    return Dio()
+    return _dio
       ..interceptors.add(
         InterceptorsWrapper(
           onRequest:
@@ -14,6 +15,10 @@ class DioInterceptorHandler {
               _errorInterceptor(error, handler),
         ),
       );
+  }
+
+  void clearInterceptor() {
+    _dio.interceptors.clear();
   }
 
   static void _requestInterceptor(
