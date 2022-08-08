@@ -19,13 +19,11 @@ class DioInterceptorHandler {
   static void _requestInterceptor(
       RequestOptions options, RequestInterceptorHandler handler) async {
     // handle request options where necessary
-    // return options;
   }
 
   static void _responseInterceptor(
       Response response, ResponseInterceptorHandler handler) async {
     // handle request response where necessary
-    //return response;
   }
 
   static void _errorInterceptor(
@@ -37,6 +35,5 @@ class DioInterceptorHandler {
     if (error.message.contains("KIEKIEKIE")) {
       // show a toast for that
     }
-    //   return error;
   }
 }
