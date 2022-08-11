@@ -54,6 +54,11 @@ class _IsolatingState extends State<Isolating> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TextRadio(
+                label: const Text(
+                  "Whatever",
+                ),
+                value: 1),
             TextRadioGroup(
               title: const Text("Pick a fruit :",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
