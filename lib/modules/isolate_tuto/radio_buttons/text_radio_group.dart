@@ -1,11 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-
 import 'text_radio.dart';
 
 class TextRadioGroup extends StatefulWidget {
-  TextRadioGroup(
+  const TextRadioGroup(
       {Key? key,
       this.title,
       this.radios = const [],
