@@ -55,19 +55,37 @@ class _IsolatingState extends State<Isolating> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextRadioGroup(
-              title: const Text("Pick a fruit :"),
+              title: const Text("Pick a fruit :",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               direction: Axis.vertical,
               onChanged: (value) {
                 log("_changeSelect: $value");
               },
               radios: const [
-                "Orange",
-                "Apple",
-                "Banana",
-                "Grape",
-                "Pineapple",
-                "Strawberry",
-                "Watermelon",
+                Text("Orange",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Apple",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Banana",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Grape",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Pineapple",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Strawberry",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Watermelon",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                Text("Pear",
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
               ],
             ),
             Text("${nth}th Prime Number",

@@ -8,7 +8,7 @@ class TextRadio extends StatefulWidget {
       this.groupValue = 0,
       this.onChanged})
       : super(key: key);
-  final String label;
+  final Widget label;
   late int value;
   late int groupValue;
   final ValueChanged<int>? onChanged;
@@ -49,7 +49,7 @@ class _TextRadioState extends State<TextRadio> {
                   });
                 },
               ),
-              Text(widget.label),
+              widget.label,
             ],
           ),
         ),

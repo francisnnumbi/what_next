@@ -10,7 +10,7 @@ class TextRadioGroup extends StatefulWidget {
       this.onChanged})
       : super(key: key);
   final Widget? title;
-  final List<String> radios;
+  final List<Widget> radios;
   final Axis direction;
   final ValueChanged<int>? onChanged;
 
@@ -35,6 +35,7 @@ class _TextRadioGroupState extends State<TextRadioGroup> {
 
   _changeSelect(int value) {
     widget.onChanged?.call(value);
+
     setState(() {
       _selectedRadio = value;
     });
