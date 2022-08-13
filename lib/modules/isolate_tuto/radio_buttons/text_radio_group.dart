@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'text_radio.dart';
 
-class TextRadioGroup extends StatefulWidget {
-  const TextRadioGroup(
+class TextRadioGroup extends StatelessWidget {
+  TextRadioGroup(
       {Key? key,
       this.title,
       this.radios = const [],
@@ -13,44 +15,39 @@ class TextRadioGroup extends StatefulWidget {
   final List<Widget> radios;
   final Axis direction;
   final ValueChanged<int>? onChanged;
+  final ValueNotifier<int> radioGroupNotifier = ValueNotifier(0);
 
-  @override
-  State<TextRadioGroup> createState() => _TextRadioGroupState();
-}
-
-class _TextRadioGroupState extends State<TextRadioGroup> {
-  int _selectedRadio = 0;
-  late List<TextRadio> _radios;
-  _initializeRadios() {
-    _radios = [];
-    for (int i = 0; i < widget.radios.length; i++) {
-      _radios.add(TextRadio(
-        label: widget.radios[i],
+  List<TextRadio> _populateRadios() {
+    final tRadios = <TextRadio>[];
+    for (int i = 0; i < radios.length; i++) {
+      tRadios.add(TextRadio(
+        label: radios[i],
         value: i,
-        groupValue: _selectedRadio,
+        groupValue: radioGroupNotifier.value,
         onChanged: _changeSelect,
       ));
     }
+    return tRadios;
   }
 
   _changeSelect(int value) {
-    widget.onChanged?.call(value);
-
-    setState(() {
-      _selectedRadio = value;
-    });
+    onChanged?.call(value);
+    radioGroupNotifier.value = value;
   }
 
   @override
   Widget build(BuildContext context) {
-    _initializeRadios();
     return Column(
       children: [
-        widget.title ?? const SizedBox(),
-        Wrap(
-          direction: widget.direction,
-          children: _radios,
-        ),
+        title ?? const SizedBox(),
+        ValueListenableBuilder(
+            valueListenable: radioGroupNotifier,
+            builder: (context, val, _) {
+              return Wrap(
+                direction: direction,
+                children: _populateRadios(),
+              );
+            }),
       ],
     );
   }
