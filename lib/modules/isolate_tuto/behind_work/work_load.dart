@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 
 int getnthPrime(int n) {
   int currentPrimeCount = 0;

@@ -4,7 +4,7 @@ import 'package:what_next/moduling.dart';
 
 import 'dio_interceptor_handler.dart';
 
-final Dio DIO = DioInterceptorHandler.initDio();
+final Dio dio = DioInterceptorHandler.initDio();
 
 void main() {
   runApp(const MyApp());

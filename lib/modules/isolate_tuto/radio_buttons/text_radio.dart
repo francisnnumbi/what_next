@@ -31,35 +31,37 @@ class TextRadio extends StatelessWidget {
           onChanged?.call(value);
           _radioNotifier.value = value;
         },
-        child: Container(
-          padding: const EdgeInsets.all(4.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              if (titlePosition == TextRadioTitlePosition.left)
-                Expanded(child: title),
-              ValueListenableBuilder<int>(
-                valueListenable: _radioNotifier,
-                builder: (context, val, _) {
-                  return Radio<int>(
-                    value: value,
-                    groupValue: val,
-                    toggleable: true,
-                    onChanged: (val) {
-                      onChanged?.call(value);
-                      _radioNotifier.value = value;
-                    },
-                  );
-                },
-              ),
-              if (titlePosition == TextRadioTitlePosition.right)
-                Expanded(child: title),
-            ],
-          ),
-        ),
+        child: ValueListenableBuilder<int>(
+            valueListenable: _radioNotifier,
+            builder: (context, val, _) {
+              return Container(
+                padding: const EdgeInsets.all(4.0),
+                decoration: BoxDecoration(
+                  color: val == value
+                      ? Theme.of(context).primaryColor.withOpacity(0.2)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    if (titlePosition == TextRadioTitlePosition.left)
+                      Expanded(child: title),
+                    Radio<int>(
+                      value: value,
+                      groupValue: val,
+                      toggleable: true,
+                      onChanged: (val) {
+                        onChanged?.call(value);
+                        _radioNotifier.value = value;
+                      },
+                    ),
+                    if (titlePosition == TextRadioTitlePosition.right)
+                      Expanded(child: title),
+                  ],
+                ),
+              );
+            }),
       ),
     );
   }
