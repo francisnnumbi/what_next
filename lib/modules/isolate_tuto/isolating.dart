@@ -55,14 +55,15 @@ class _IsolatingState extends State<Isolating> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextRadio(
-                label: const Text(
+                title: const Text(
                   "Whatever",
                 ),
                 value: 1),
             TextRadioGroup(
               title: const Text("Pick a fruit :",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              direction: Axis.vertical,
+              titlePosition: TextRadioTitlePosition.left,
+              direction: Axis.horizontal,
               onChanged: (value) {
                 log("_changeSelect: $value");
               },

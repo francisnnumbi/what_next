@@ -7,12 +7,15 @@ class TextRadioGroup extends StatelessWidget {
   TextRadioGroup(
       {Key? key,
       this.title,
+      this.titlePosition = TextRadioTitlePosition.right,
       this.radios = const [],
       this.direction = Axis.horizontal,
       this.onChanged})
       : super(key: key);
   final Widget? title;
+
   final List<Widget> radios;
+  final TextRadioTitlePosition titlePosition;
   final Axis direction;
   final ValueChanged<int>? onChanged;
   final ValueNotifier<int> radioGroupNotifier = ValueNotifier(0);
@@ -21,7 +24,8 @@ class TextRadioGroup extends StatelessWidget {
     final tRadios = <TextRadio>[];
     for (int i = 0; i < radios.length; i++) {
       tRadios.add(TextRadio(
-        label: radios[i],
+        title: radios[i],
+        titlePosition: titlePosition,
         value: i,
         groupValue: radioGroupNotifier.value,
         onChanged: _changeSelect,
