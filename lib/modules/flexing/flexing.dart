@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Flexing extends StatelessWidget {
@@ -7,12 +6,64 @@ class Flexing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  const Text("Flexing"),),
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: const Text("Flexing"),
+      ),
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const[
-            Text("Flexing"),
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange,
+              ),
+              child: const Text(
+                "Orange",
+              ),
+            ),
+            const SizedBox(width: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green,
+              ),
+              child: const Text(
+                "Green",
+              ),
+            ),
+            const SizedBox(width: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+              ),
+              child: const Text(
+                "Blue",
+              ),
+            ),
+            const SizedBox(width: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+              ),
+              child: const Text(
+                "Red",
+              ),
+            ),
+            const SizedBox(width: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.teal,
+              ),
+              child: const Text(
+                "Teal",
+              ),
+            ),
+            const SizedBox(width: 10),
           ],
         ),
       ),
