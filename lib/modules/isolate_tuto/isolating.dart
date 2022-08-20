@@ -21,6 +21,20 @@ class _IsolatingState extends State<Isolating> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   int _bottomBarIndex = 0;
 
+  final fruits = const [
+    Text("Orange", style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Apple", style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Banana", style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Grape", style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Pineapple",
+        style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Strawberry",
+        style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Watermelon",
+        style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    Text("Pear", style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+  ];
+
   void _getPrime() async {
     nth = _random.nextInt(100000);
     int ans = await compute(getnthPrime, nth);
@@ -51,7 +65,8 @@ class _IsolatingState extends State<Isolating> {
         child: const Icon(Icons.add),
       ),
       body: Center(
-        child: Column(
+        child: Flex(
+          direction: Axis.vertical,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextRadio(
@@ -67,38 +82,7 @@ class _IsolatingState extends State<Isolating> {
               onChanged: (value) {
                 log("_changeSelect: $value");
               },
-              radios: const [
-                Text("Orange",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Apple",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Banana",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Grape",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Pineapple",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Strawberry",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Watermelon",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-                Text("Pear",
-                    style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-              ],
-            ),
-            Text("${nth}th Prime Number",
-                style: Theme.of(context).textTheme.headline5),
-            Text(
-              nthPrime.toString(),
-              style: Theme.of(context).textTheme.headline4,
+              radios: fruits,
             ),
           ],
         ),

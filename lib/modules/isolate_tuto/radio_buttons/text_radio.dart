@@ -12,12 +12,14 @@ class TextRadio extends StatelessWidget {
       this.titlePosition = TextRadioTitlePosition.right,
       this.value = 0,
       this.groupValue = 0,
+      this.padding = const EdgeInsets.all(2.0),
       this.onChanged})
       : super(key: key) {
     _radioNotifier.value = groupValue;
   }
   final Widget title;
   final TextRadioTitlePosition titlePosition;
+  final EdgeInsets padding;
   final int value;
   final int groupValue;
   final ValueChanged<int>? onChanged;
@@ -35,7 +37,7 @@ class TextRadio extends StatelessWidget {
             valueListenable: _radioNotifier,
             builder: (context, val, _) {
               return Container(
-                padding: const EdgeInsets.all(4.0),
+                padding: padding,
                 decoration: BoxDecoration(
                   color: val == value
                       ? Theme.of(context).primaryColor.withOpacity(0.2)
@@ -46,7 +48,11 @@ class TextRadio extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     if (titlePosition == TextRadioTitlePosition.left)
-                      Expanded(child: title),
+                      Expanded(
+                          child: Padding(
+                        padding: const EdgeInsets.only(left: 4.0),
+                        child: title,
+                      )),
                     Radio<int>(
                       value: value,
                       groupValue: val,
@@ -57,7 +63,11 @@ class TextRadio extends StatelessWidget {
                       },
                     ),
                     if (titlePosition == TextRadioTitlePosition.right)
-                      Expanded(child: title),
+                      Expanded(
+                          child: Padding(
+                        padding: const EdgeInsets.only(right: 4.0),
+                        child: title,
+                      )),
                   ],
                 ),
               );
