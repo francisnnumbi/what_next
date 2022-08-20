@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: getDefaultModule,
+      home: getModule(module: Modules.flex),
     );
   }
 }
