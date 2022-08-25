@@ -1,0 +1,38 @@
+List<Map<String, dynamic>> chatsData = [
+  {
+    "thumb": "assets/images/profiles/baby.jpg",
+    "user": "Nduba Numbi",
+    "message": "This is the very long message of all times",
+    "date": "23:43",
+    "count": 34,
+    "mute": true,
+    "pin": true,
+  },
+  {
+    "thumb": "assets/images/profiles/p1.jpg",
+    "user": "John Doe",
+    "message": "What is it all about ?",
+    "date": "12:30",
+    "count": 4,
+    "mute": true,
+    "pin": false,
+  },
+  {
+    "thumb": "assets/images/profiles/p2.jpg",
+    "user": "Jane Doe",
+    "message": "I like nature",
+    "date": "09:30",
+    "count": 1,
+    "mute": false,
+    "pin": false,
+  },
+  {
+    "thumb": "assets/images/profiles/p3.jpg",
+    "user": "Mimi Black",
+    "message": "Pottery is my passion",
+    "date": "01:30",
+    "count": 2,
+    "mute": false,
+    "pin": true,
+  },
+];

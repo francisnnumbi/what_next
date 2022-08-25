@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'What Next',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
-      home: getModule(module: Modules.flex),
+      home: getModule(module: Modules.whatsapp),
     );
   }
 }
