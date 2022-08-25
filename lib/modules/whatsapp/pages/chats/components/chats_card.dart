@@ -24,7 +24,7 @@ class ChatsCard extends StatelessWidget {
               radius: 25,
             ),
             const SizedBox(
-              width: 10,
+              width: 16,
             ),
             Expanded(
               flex: 4,
@@ -53,6 +53,9 @@ class ChatsCard extends StatelessWidget {
                 ],
               ),
             ),
+             const SizedBox(
+              width: 10,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -73,7 +76,7 @@ class ChatsCard extends StatelessWidget {
                       ),
                     if (data["mute"])
                       const SizedBox(
-                        width: 4,
+                        width: 8,
                       ),
                     if (data["pin"])
                       const Icon(
@@ -83,7 +86,7 @@ class ChatsCard extends StatelessWidget {
                       ),
                     if (data["pin"])
                       const SizedBox(
-                        width: 4,
+                        width: 8,
                       ),
                     Container(
                       decoration: const BoxDecoration(

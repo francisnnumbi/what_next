@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:what_next/modules/whatsapp/chats/chats.dart';
+import 'package:flutter/services.dart';
+import 'package:what_next/modules/whatsapp/pages/chats/chats.dart';
+
 
 class Whatsapp extends StatelessWidget {
   const Whatsapp({Key? key}) : super(key: key);
@@ -12,6 +14,10 @@ class Whatsapp extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           // backgroundColor: Colors.teal,
+          elevation: 0.5,
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+          ),
           title: const Text("WhatsApp"),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
