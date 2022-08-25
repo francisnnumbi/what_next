@@ -1,14 +1,5 @@
 List<Map<String, dynamic>> chatsData = [
   {
-    "thumb": "assets/images/profiles/baby.jpg",
-    "user": "Nduba Numbi",
-    "message": "This is the very long message of all times",
-    "date": "23:43",
-    "count": 34,
-    "mute": true,
-    "pin": true,
-  },
-  {
     "thumb": "assets/images/profiles/p1.jpg",
     "user": "John Doe",
     "message": "What is it all about ?",
@@ -169,5 +160,26 @@ List<Map<String, dynamic>> chatsData = [
     "count": 2,
     "mute": false,
     "pin": true,
+  },
+];
+
+List<Map<String, dynamic>> statusData = [
+  {
+    "thumb": "assets/images/profiles/p3.jpg",
+    "user": "Mimi Black",
+    "last": "01 hour ago",
+    "count": 2,
+  },
+  {
+    "thumb": "assets/images/profiles/p1.jpg",
+    "user": "John Doe",
+    "last": "12 minutes ago",
+    "count": 4,
+  },
+  {
+    "thumb": "assets/images/profiles/p2.jpg",
+    "user": "Jane Doe",
+    "last": "09 minutes ago",
+    "count": 1,
   },
 ];

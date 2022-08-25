@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:what_next/modules/whatsapp/pages/chats/chats.dart';
-
+import 'package:what_next/modules/whatsapp/pages/chats/chats_screen.dart';
+import 'package:what_next/modules/whatsapp/pages/status/status_screen.dart';
 
 class Whatsapp extends StatelessWidget {
   const Whatsapp({Key? key}) : super(key: key);
@@ -40,10 +40,14 @@ class Whatsapp extends StatelessWidget {
         ),
         body: const TabBarView(children: [
           Text("First"),
-          Chats(),
-          Text("Third"),
+          ChatsScreen(),
+          StatusScreen(),
           Text("Fourth"),
         ]),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.message),
+        ),
       ),
     );
   }

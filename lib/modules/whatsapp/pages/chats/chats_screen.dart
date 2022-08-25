@@ -3,8 +3,8 @@ import 'package:what_next/modules/whatsapp/dummy_data.dart';
 
 import 'components/chats_card.dart';
 
-class Chats extends StatelessWidget {
-  const Chats({Key? key}) : super(key: key);
+class ChatsScreen extends StatelessWidget {
+  const ChatsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
